@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        计算你从破蛋日到现在的天数
+        <input type="date" @change="func()" id="ipt">
+
+        <div v-birthday="datetime"></div>
+    </div>
+
+    <script src="vue/vue.js"></script>
+    <script src="birthday.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                datetime: ''
+            },
+            methods: {
+                func: function () {
+                    var date = document.getElementById("ipt").value;
+                    datetime = Date.parse(date);
+                    console.log(datetime);
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
