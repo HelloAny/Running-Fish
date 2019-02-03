@@ -23,9 +23,6 @@ var Time = {
 };
 
 Vue.directive('birthday', {
-  bind: function(el, binding) {
-    console.log('1');
-  },
   update: function(el, binding) {
     el.innerHTML = Time.getFormatdate(binding.value);
   },
